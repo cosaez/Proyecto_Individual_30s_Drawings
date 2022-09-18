@@ -1,0 +1,113 @@
+*{
+  text-align: center;
+  padding: 0;
+  border-radius: 5px 5px;
+}
+
+.App {
+  margin: 3vh 4vw 0 4vw;
+  text-align: center;
+  background-color: #F5F5F5;
+  min-height: 80vh;
+  box-shadow: 1px 1px 5px #aaa;
+}
+ul{
+  list-style: circle;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+li{
+
+  text-align: left;
+}
+th{
+  padding: 1em;
+}
+td{
+  padding: 1em;
+}
+form{
+padding: 1em 3em 1em 3em;
+}
+label{
+  display: flex;
+  justify-self: left;
+}
+form button{
+  background-color:#43A367 !important;
+}
+form button:active{
+  background-color:#385380 !important;
+}
+/* Main styles */
+.Main {
+  padding: 1em;
+}
+.home{
+  text-decoration: none !important; 
+}
+.instrucciones{
+  display: flex;
+  justify-content: space-around;
+  padding: 4vh 0 4vh 0;
+}
+.title{
+  color: white !important;
+}
+/* Nav styles */
+.header{
+  background-color: #385380;
+  
+}
+
+/* List styles */
+.list{
+  display: flex;
+  flex-direction: row;
+  gap: 4vw;
+  padding: 0 6vw 0 6vw;
+}
+.list-btn{
+  margin:0.5em;
+}
+
+/* New styles */
+.thumbnail{
+  height: 12vh;
+  box-shadow: 1px 1px 5px #aaa;
+}
+.thumbnail-container{
+  padding: 5px;
+}
+/* Exercise styles */
+#slide{
+  background-color: black;
+  height:70vh;
+}
+.comment{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height:70vh;
+  background-color: black;
+}
+.photo{
+  max-height: 70vh;
+}
+
+
+
+/* #C6F1A2
+#A8D966
+#43A367
+#385380 */
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
