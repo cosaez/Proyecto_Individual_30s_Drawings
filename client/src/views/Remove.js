@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Remove = () => {
+    
     const [data, setData] = useState([]);
     useEffect(() => {
         axios.get("http://localhost:8000/api/images")

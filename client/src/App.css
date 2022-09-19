@@ -47,7 +47,7 @@ form button:active{
 .home{
   text-decoration: none !important; 
 }
-.instrucciones{
+.instructions{
   display: flex;
   justify-content: space-around;
   padding: 4vh 0 4vh 0;
@@ -96,14 +96,6 @@ form button:active{
 .photo{
   max-height: 70vh;
 }
-
-
-
-/* #C6F1A2
-#A8D966
-#43A367
-#385380 */
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

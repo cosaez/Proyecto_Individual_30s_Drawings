@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 const Exercise = ({item}) => {
     
     console.log({item});
-    // const item = [
-    //     "https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg",
-    //     "https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg",
-    //     "https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg"
-    // ];
     return (
         <Carousel wrap={false} id="slide" interval={1}>
             <Carousel.Item interval={15000}>

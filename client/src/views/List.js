@@ -2,8 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button } from 'reactstrap';
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { UserContext } from '../context/userContext';
 
 const List = props => {
+    const {user, setUser} = useContext(UserContext);
+    const context = useContext(UserContext);
     const { item, setItem } = props;
     const [data, setData] = useState([]);
     const selection = [];
@@ -16,7 +20,7 @@ const List = props => {
     }, [])
     const select = (image) => {
         selection.push(image);
-        console.log("Your selection includes: " + selection)
+        console.log("You've selected: " + selection);
     }
     return (
         <div>
@@ -26,42 +30,56 @@ const List = props => {
                 </header>
             </div>
             <div className="list">
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada") }}>
+                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                     <img src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg") }} />
                 </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada") }}>
+                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                     <img src="https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg") }} />
                 </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada") }}>
+                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                     <img src="https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg") }} />
                 </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada") }}>
+                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                     <img src="https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg") }} />
                 </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada") }}>
+                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                     <img src="https://images.pexels.com/photos/4587955/pexels-photo-4587955.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/4587955/pexels-photo-4587955.jpeg") }} />
                 </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada") }}>
+                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                     <img src="https://images.pexels.com/photos/6869636/pexels-photo-6869636.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/6869636/pexels-photo-6869636.jpeg") }} />
                 </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada") }}>
+                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                     <img src="https://images.pexels.com/photos/5078672/pexels-photo-5078672.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/5078672/pexels-photo-5078672.jpeg") }} />
                 </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada") }}>
+                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                     <img src="https://images.pexels.com/photos/4286618/pexels-photo-4286618.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/4286618/pexels-photo-4286618.jpeg") }} />
                 </div>
             </div>
-            <div>
+            {
+                    context.user && <div>
+                    <Link to={'/new'}>
+                        <Button className="list-btn">
+                            Añade tus imágenes
+                        </Button>
+                    </Link>
+                </div>
+                }
+                {
+                !context.user && <div>
+                    <p>Conectate para añadir más imágenes</p>
+                    </div>
+                }
+            {/* <div>
                 <Link to={'/new'}>
                     <Button className="list-btn">
                         Añade tus imagenes
                     </Button>
                 </Link>
-            </div>
+            </div> */}
             <div className="list">
                 {data.map((data) => {
                     return (
-                        <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("Imagen seleccionada")}}>
+                        <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image")}}>
                             <img src={data.image} className="thumbnail" onClick={(e) => { select(data.image) }} />
                         </div>
                     )
