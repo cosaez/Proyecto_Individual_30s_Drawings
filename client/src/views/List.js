@@ -8,7 +8,6 @@ import { UserContext } from '../context/userContext';
 import PresetThumbnail from '../components/PresetThumbnail';
 
 const List = props => {
-    const {user, setUser} = useContext(UserContext);
     const context = useContext(UserContext);
     const { item, setItem } = props;
     const [data, setData] = useState([]);
@@ -42,19 +41,19 @@ const List = props => {
                 <PresetThumbnail pic={"https://images.pexels.com/photos/4286618/pexels-photo-4286618.jpeg"} select={select} />
             </div>
             {
-                    context.user && <div>
+                context.user && <div>
                     <Link to={'/new'}>
                         <Button className="list-btn">
                             Añade tus imágenes
                         </Button>
                     </Link>
                 </div>
-                }
-                {
+            }
+            {
                 !context.user && <div>
                     <p>Conectate para añadir más imágenes</p>
-                    </div>
-                }
+                </div>
+            }
             {/* <div>
                 <Link to={'/new'}>
                     <Button className="list-btn">
@@ -65,7 +64,7 @@ const List = props => {
             <div className="list">
                 {data.map((data) => {
                     return (
-                        <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image")}}>
+                        <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
                             <img src={data.image} className="thumbnail" onClick={(e) => { select(data.image) }} />
                         </div>
                     )
