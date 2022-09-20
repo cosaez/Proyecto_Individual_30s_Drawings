@@ -11,6 +11,10 @@
   min-height: 80vh;
   box-shadow: 1px 1px 5px #aaa;
 }
+h5{
+  color:white !important;
+  font-size: 10px !important;
+}
 ul{
   list-style: circle;
   display: flex;

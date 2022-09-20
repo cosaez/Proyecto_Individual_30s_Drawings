@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
 
+import PresetThumbnail from '../components/PresetThumbnail';
+
 const List = props => {
     const {user, setUser} = useContext(UserContext);
     const context = useContext(UserContext);
@@ -30,30 +32,14 @@ const List = props => {
                 </header>
             </div>
             <div className="list">
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
-                    <img src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg") }} />
-                </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
-                    <img src="https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg") }} />
-                </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
-                    <img src="https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg") }} />
-                </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
-                    <img src="https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg") }} />
-                </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
-                    <img src="https://images.pexels.com/photos/4587955/pexels-photo-4587955.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/4587955/pexels-photo-4587955.jpeg") }} />
-                </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
-                    <img src="https://images.pexels.com/photos/6869636/pexels-photo-6869636.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/6869636/pexels-photo-6869636.jpeg") }} />
-                </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
-                    <img src="https://images.pexels.com/photos/5078672/pexels-photo-5078672.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/5078672/pexels-photo-5078672.jpeg") }} />
-                </div>
-                <div className="thumbnail-container" onClick={(e) => { e.target.border = '1px outset green'; console.log("You've selected an image") }}>
-                    <img src="https://images.pexels.com/photos/4286618/pexels-photo-4286618.jpeg" className="thumbnail" onClick={(e) => { select("https://images.pexels.com/photos/4286618/pexels-photo-4286618.jpeg") }} />
-                </div>
+                <PresetThumbnail pic={"https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg"} select={select} />
+                <PresetThumbnail pic={"https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg"} select={select} />
+                <PresetThumbnail pic={"https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg"} select={select} />
+                <PresetThumbnail pic={"https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg"} select={select} />
+                <PresetThumbnail pic={"https://images.pexels.com/photos/4587955/pexels-photo-4587955.jpeg"} select={select} />
+                <PresetThumbnail pic={"https://images.pexels.com/photos/6869636/pexels-photo-6869636.jpeg"} select={select} />
+                <PresetThumbnail pic={"https://images.pexels.com/photos/5078672/pexels-photo-5078672.jpeg"} select={select} />
+                <PresetThumbnail pic={"https://images.pexels.com/photos/4286618/pexels-photo-4286618.jpeg"} select={select} />
             </div>
             {
                     context.user && <div>
