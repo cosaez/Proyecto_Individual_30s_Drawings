@@ -1,109 +1,142 @@
-*{
+* {
   text-align: center;
   padding: 0;
   border-radius: 5px 5px;
 }
 
 .App {
-  margin: 3vh 4vw 0 4vw;
+  margin: 10px;
   text-align: center;
   background-color: #F5F5F5;
   min-height: 80vh;
   box-shadow: 1px 1px 5px #aaa;
 }
-h5{
-  color:white !important;
+
+h5 {
+  color: white !important;
   font-size: 10px !important;
 }
-ul{
+
+ul {
   list-style: circle;
   display: flex;
   flex-direction: column;
   justify-content: left;
 }
-li{
+
+li {
 
   text-align: left;
 }
-th{
+
+th {
   padding: 1em;
 }
-td{
+
+td {
   padding: 1em;
 }
-form{
-padding: 1em 3em 1em 3em;
+
+form {
+  padding: 1em 3em 1em 3em;
 }
-label{
+
+label {
   display: flex;
   justify-self: left;
 }
-form button{
-  background-color:#43A367 !important;
+
+form button {
+  background-color: #43A367 !important;
 }
-form button:active{
-  background-color:#385380 !important;
+
+form button:active {
+  background-color: #385380 !important;
 }
+
 /* Main styles */
 .Main {
   padding: 1em;
 }
-.home{
-  text-decoration: none !important; 
+
+.home {
+  text-decoration: none !important;
 }
-.instructions{
+
+.instructions {
   display: flex;
   justify-content: space-around;
   padding: 4vh 0 4vh 0;
 }
-.title{
+
+.title {
   color: white !important;
 }
+
 /* Nav styles */
-.header{
+.header {
   background-color: #385380;
-  
+
 }
 
 /* List styles */
-.list{
-  display: flex;
-  flex-direction: row;
-  gap: 4vw;
+.list {
   padding: 0 6vw 0 6vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3em, max-content));
+  justify-content: center;
+  grid-row-gap: 12px;
+  min-width: 100vw;
 }
-.list-btn{
-  margin:0.5em;
+
+.list-btn {
+  margin: 0.5em;
 }
 
 /* New styles */
-.thumbnail{
+.thumbnail {
   height: 12vh;
   box-shadow: 1px 1px 5px #aaa;
+
 }
-.thumbnail-container{
+
+.thumbnail:hover {
+  transform: translateY(-3px);
+}
+
+.thumbnail-container {
   padding: 5px;
 }
+
 /* Exercise styles */
-#slide{
+#slide {
   background-color: black;
-  height:70vh;
+  height: 70vh;
 }
-.comment{
+
+.comment {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height:70vh;
+  height: 70vh;
   background-color: black;
 }
-.photo{
+
+.photo {
   max-height: 70vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 600px) {
+  *{font-size: small !important;}
+  .list {
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .thumbnail {
+    height: 50vh;  
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
   }
 }
-
