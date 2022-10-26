@@ -4,6 +4,8 @@ import { Button } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
+import toast, { Toaster } from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import PresetThumbnail from '../components/PresetThumbnail';
 
@@ -21,7 +23,12 @@ const List = props => {
     }, [])
     const select = (image) => {
         selection.push(image);
+
         console.log("You've selected: " + selection);
+        toast('La imagen fue seleccionada', {
+            icon: '👍',
+        });;
+
     }
     return (
         <div>
@@ -54,13 +61,6 @@ const List = props => {
                     <p>Conectate para añadir más imágenes</p>
                 </div>
             }
-            {/* <div>
-                <Link to={'/new'}>
-                    <Button className="list-btn">
-                        Añade tus imagenes
-                    </Button>
-                </Link>
-            </div> */}
             <div className="list">
                 {data.map((data) => {
                     return (
@@ -73,10 +73,14 @@ const List = props => {
             <div>
                 <Link to={'/exercise'}>
                     <Button className="list-btn" style={{ backgroundColor: '#385380' }} onClick={(e) => { setItem(selection) }}>
-                        Empezar
+                    Empezar <FontAwesomeIcon icon="fa-solid fa-pen" className="icon"/>
                     </Button>
                 </Link>
             </div>
+            <Toaster
+                position="bottom-center"
+                reverseOrder={false}
+            />
         </div>
     )
 }

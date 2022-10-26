@@ -3,6 +3,7 @@ import { Navbar, NavbarBrand, Button } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Nav = () => {
     const context = useContext(UserContext);
@@ -15,15 +16,13 @@ const Nav = () => {
                     </NavbarBrand>
                 </Link>
                 {
-                    !context.user && <Link to={'/login'}>
-                    <Button>
+                    !context.user && <Link to={'/login'} className="title">
                         Login
-                    </Button>
-                </Link>
+                    </Link>
                 }
                 {
-                context.user && <div>
-                    <h5>Usuario: {context.user.email}</h5>
+                    context.user && <div>
+                        <h5><FontAwesomeIcon icon="fa-solid fa-circle-user" />Usuario: {context.user.email}</h5>
                     </div>
                 }
             </Navbar>

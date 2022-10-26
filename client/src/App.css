@@ -4,12 +4,23 @@
   border-radius: 5px 5px;
 }
 
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#FFFF00;
+  height: 1px;
+}
 .App {
   margin: 10px;
   text-align: center;
   background-color: #F5F5F5;
   min-height: 80vh;
   box-shadow: 1px 1px 5px #aaa;
+}
+.icon{
+  color:white !important;
 }
 
 h5 {
@@ -57,8 +68,15 @@ form button:active {
 /* Main styles */
 .Main {
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.Main a{
+  color: #385380;
+}
 .home {
   text-decoration: none !important;
 }
@@ -73,9 +91,27 @@ form button:active {
   color: white !important;
 }
 
+#welcome:hover{
+  transform: translateY(-8px);
+  }
+#welcome-img{
+  width: 50vw;
+  height: 50vh;
+  background-image: url(./assets/welcome.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#welcome-link{
+  text-decoration: none;
+}  
 /* Nav styles */
 .header {
   background-color: #385380;
+  background-image: url(./assets/nav-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
 
@@ -126,6 +162,45 @@ form button:active {
 .photo {
   max-height: 70vh;
 }
+/* Others styles */
+#pillow{
+  height: 40vh;
+  background-image: url(./assets/pillow-e.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#patterns{
+  height: 40vh;
+  background-image: url(./assets/patterns-e.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#base{
+  height: 40vh;
+  background-image: url(./assets/baseorface-e.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#hand{
+  height: 40vh;
+  background-image: url(./assets/hand-e.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#dots{
+  height: 40vh;
+  background-image: url(./assets/connectdot-e.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}     
 
 @media (max-width: 600px) {
   *{font-size: small !important;}
